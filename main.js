@@ -193,4 +193,4 @@ function loop() {
   if (running) { drawMap(); const rn = roomName(); if (rn !== lastRoom) { lastRoom = rn; document.getElementById('room').textContent = rn; document.getElementById('room').style.display = rn ? '' : 'none'; } }
 }
 loop();
-window.__visite = { teleport, CFG, setView: (y, p) => { yaw = y; pitch = p; }, ready: true };
+window.__visite = { THREE, scene, colliders, teleport, CFG, pos: () => [feet.x, -feet.z, feet.y, yaw, pitch], setView: (y, p) => { yaw = y; pitch = p; }, ready: true };
