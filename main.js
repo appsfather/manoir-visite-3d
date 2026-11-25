@@ -51,7 +51,7 @@ gltf.scene.traverse(o => {
     const lm = m.emissiveMap;
     if (n.startsWith("LM_W_Sol_pelouse")) { m.map.wrapS = m.map.wrapT = THREE.RepeatWrapping; m.map.needsUpdate = true; }
     o.material = new THREE.MeshBasicMaterial({ map: m.map, lightMap: lm || null, lightMapIntensity: LMI, side: THREE.FrontSide });
-    if (n.startsWith('LM_W_Sol_pelouse')) { collide = true; }
+    if (n.startsWith('LM_W_Sol_pelouse')) { o.material.color.setRGB(0.42, 0.78, 0.30); }
   } else if (n.startsWith('EMIT_')) {
     const c = m.emissive.clone().multiplyScalar(2.5);
     o.material = new THREE.MeshBasicMaterial({ color: c }); collide = false;
