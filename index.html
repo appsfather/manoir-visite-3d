@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Visite 3D – Manoir Streamline Moderne</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "./lib/three/build/three.module.js",
+  "three/addons/": "./lib/three/addons/",
+  "three-mesh-bvh": "./lib/three-mesh-bvh.module.js"
+} }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="loading"><div class="box"><h1>Manoir Streamline Moderne</h1><p>Visite 3D – chargement de la maison…</p>
+  <div class="bar"><div id="bar"></div></div><p id="pct">0 %</p></div></div>
+<div id="start" class="hidden"><div class="box">
+  <h1>Manoir Streamline Moderne</h1><p class="sub">Pointe-Noire – visite libre (V3b)</p>
+  <table>
+   <tr><td>Avancer / reculer / pas de côté</td><td><b>Z Q S D</b>, <b>W A S D</b> ou <b>flèches</b></td></tr>
+   <tr><td>Regarder</td><td>souris (cliquer pour capturer, Échap pour libérer)</td></tr>
+   <tr><td>Courir</td><td><b>Maj</b></td></tr>
+   <tr><td>Pièces / téléportation</td><td><b>M</b> ou le bouton ☰, ou un clic sur la mini-carte</td></tr>
+   <tr><td>Mobile</td><td>pouce gauche : se déplacer · pouce droit : regarder</td></tr>
+  </table>
+  <button id="go">Entrer</button></div></div>
+<div id="hud" class="hidden">
+  <button id="menuBtn" title="Pièces">☰ Pièces</button>
+  <div id="room"></div>
+  <canvas id="minimap" width="240" height="134"></canvas>
+  <div id="menu" class="hidden">
+    <h3>Rez-de-chaussée</h3><div id="m0"></div>
+    <h3>Étage</h3><div id="m1"></div>
+    <h3>Extérieur</h3><div id="m2"></div>
+    <label>Luminosité <input id="expo" type="range" min="-1.5" max="1.5" step="0.05" value="0"></label>
+  </div>
+  <div id="joy"><div id="knob"></div></div>
+  <div id="cross">+</div>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
