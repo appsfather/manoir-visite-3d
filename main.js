@@ -123,7 +123,7 @@ canvas.addEventListener('touchend', e => { for (const t of e.changedTouches) {
 // ---------------------------------------------------------------- menu des pièces + mini-carte
 const menu = document.getElementById('menu');
 function toggleMenu() { menu.classList.toggle('hidden'); if (!menu.classList.contains('hidden')) document.exitPointerLock?.(); }
-function closeMenu() { menu.classList.add('hidden'); }
+function closeMenu() { document.getElementById('menu').classList.add('hidden'); }
 document.getElementById('menuBtn').onclick = toggleMenu;
 CFG.rooms.forEach(r => { const a = document.createElement('a'); a.textContent = r.name; a.onclick = () => teleport(r); document.getElementById('m' + r.lvl).appendChild(a); });
 document.getElementById('expo').oninput = e => { renderer.toneMappingExposure = BASE_EXPO * Math.pow(2, +e.target.value); };
